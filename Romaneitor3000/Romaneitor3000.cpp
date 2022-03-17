@@ -27,10 +27,21 @@ void comprobarNumero(char numero[]) {
     }
 }
 
+int contarCaracteres(char numero[]) {
+    int cantidad = 0;
+    for (int i = 0; i <= 20; i++) {
+        if (numero[i] != '\0') {
+            cantidad++;
+        }
+    }
+    return cantidad;
+}
+
 void main() {
     cout << "Hello World!\n";
     cout << "Ingrese un numero romano" << endl;
     cin >> numeroRomano;
     cout << numeroRomano << endl;
-    comprobarNumero(numeroRomano);
+    //comprobarNumero(numeroRomano);
+    cout << contarCaracteres(numeroRomano) << endl;
 }
