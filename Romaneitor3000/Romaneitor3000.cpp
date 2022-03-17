@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-void comprobarNumero(char numero[]) {
+bool numeroEsCorrecto(char numero[]) {
     int I = 0;
     int V = 0;
     int X = 0;
@@ -10,12 +10,14 @@ void comprobarNumero(char numero[]) {
     int D = 0;
     int M = 0;
     int cantidad = 0;
+    int errores = 0;
     for (int i = 0; numero[i] != '\0'; i++) {
             cantidad++;
     }
     for (int i = 0; i <= cantidad - 1; i++) {
         if (numero[i] != 'I' && numero[i] != 'V' && numero[i] != 'X' && numero[i] != 'L' && numero[i] != 'C' && numero[i] != 'D' && numero[i] != 'M') {
             cout << "Digito " << i + 1 << " Es incorrecto\n";
+            errores++;
         }
         switch (numero[i]) {
         case 'I':
@@ -43,6 +45,13 @@ void comprobarNumero(char numero[]) {
     }
     if (I > 3 || V > 3 || X > 3 || C > 3 || D > 3 || M > 3) {
         cout << "Numero Incorrecto\n";
+        errores++;
+    }
+    if (errores != 0) {
+        return false;
+    }
+    else {
+        return true;
     }
 }
 
@@ -52,6 +61,8 @@ int main() {
     cout << "Ingrese un numero romano" << endl;
     cin >> numeroRomano;
     cout << numeroRomano << endl;
-    comprobarNumero(numeroRomano);
+    if (numeroEsCorrecto(numeroRomano)) {
+        cout << "El Numero es correcto\n";
+    }
     return 0;
 }
