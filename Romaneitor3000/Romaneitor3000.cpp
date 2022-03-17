@@ -1,12 +1,14 @@
 #include <iostream>
 using namespace std;
-char numeroRomano[20];
 
 void comprobarNumero(char numero[]) {
     int I = 0;
     int V = 0;
     int X = 0;
     int L = 0;
+    int C = 0;
+    int D = 0;
+    int M = 0;
     int cantidad = 0;
     for (int i = 0; i <= 20; i++) {
         if (numero[i] != '\0') {
@@ -14,7 +16,7 @@ void comprobarNumero(char numero[]) {
         }
     }
     for (int i = 0; i <= cantidad - 1; i++) {
-        if (numero[i] != 'I' && numero[i] != 'V' && numero[i] != 'X' && numero[i] != 'L') {
+        if (numero[i] != 'I' && numero[i] != 'V' && numero[i] != 'X' && numero[i] != 'L' && numero[i] != 'C' && numero[i] != 'D' && numero[i] != 'M') {
             cout << "Digito " << i + 1 << " Es incorrecto\n";
         }
         switch (numero[i]) {
@@ -30,14 +32,24 @@ void comprobarNumero(char numero[]) {
         case 'L':
             L++;
             break;
+        case 'C':
+            L++;
+            break;
+        case 'D':
+            L++;
+            break;
+        case 'M':
+            L++;
+            break;
         }
     }
-    if (I > 3 || V > 3 || X > 3) {
+    if (I > 3 || V > 3 || X > 3 || C > 3 || D > 3 || M > 3) {
         cout << "Numero Incorrecto\n";
     }
 }
 
 int main() {
+    char numeroRomano[20];
     cout << "Hello World!\n";
     cout << "Ingrese un numero romano" << endl;
     cin >> numeroRomano;
