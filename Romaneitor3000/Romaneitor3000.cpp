@@ -10,10 +10,8 @@ void comprobarNumero(char numero[]) {
     int D = 0;
     int M = 0;
     int cantidad = 0;
-    for (int i = 0; i <= 20; i++) {
-        if (numero[i] != '\0') {
+    for (int i = 0; numero[i] != '\0'; i++) {
             cantidad++;
-        }
     }
     for (int i = 0; i <= cantidad - 1; i++) {
         if (numero[i] != 'I' && numero[i] != 'V' && numero[i] != 'X' && numero[i] != 'L' && numero[i] != 'C' && numero[i] != 'D' && numero[i] != 'M') {
