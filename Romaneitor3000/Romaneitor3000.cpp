@@ -2,42 +2,12 @@
 using namespace std;
 
 bool numeroEsCorrecto(char numero[]) {
-    int I = 0;
-    int V = 0;
-    int X = 0;
-    int L = 0;
-    int C = 0;
-    int D = 0;
-    int M = 0;
     int cantidad = 0;
     int errores = 0;
     for (int i = 0; numero[i] != '\0'; i++) {
         if (numero[i] != 'I' && numero[i] != 'V' && numero[i] != 'X' && numero[i] != 'L' && numero[i] != 'C' && numero[i] != 'D' && numero[i] != 'M') {
             cout << "Digito " << i + 1 << " Es incorrecto\n";
             errores++;
-        }
-        switch (numero[i]) {
-        case 'I':
-            I++;
-            break;
-        case 'V':
-            V++;
-            break;
-        case 'X':
-            X++;
-            break;
-        case 'L':
-            L++;
-            break;
-        case 'C':
-            C++;
-            break;
-        case 'D':
-            D++;
-            break;
-        case 'M':
-            M++;
-            break;
         }
         if ((numero[i] == 'I' && numero[i + 1] == 'L') || (numero[i] == 'I' && numero[i + 1] == 'C') || (numero[i] == 'I' && numero[i + 1] == 'D') || (numero[i] == 'I' && numero[i + 1] == 'M')) {
             errores++;
@@ -123,16 +93,15 @@ int calcularNumeroArabigo(char numero[]) {
 }
 
 int main() {
+    int eleccion = 0;
     char numeroRomano[20];
-    cout << "Hello World!\n";
-    cout << "Ingrese un numero romano" << endl;
+    cout << "Ingrese un numero romano (En mayusculas)" << endl;
     cin >> numeroRomano;
-    cout << numeroRomano << endl;
     if (numeroEsCorrecto(numeroRomano)) {
         cout << calcularNumeroArabigo(numeroRomano) << endl;
     }
     else {
-        cout << "Vuelva a intentarlo\n";
+        cout << "Vuelva a intentarlo" << endl;
     }
     return 0;
 }
